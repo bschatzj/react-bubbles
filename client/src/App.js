@@ -4,6 +4,7 @@ import BubblePage from './components/BubblePage'
 import ProtectedRoute from "./components/ProtectedRoutes";
 import Login from "./components/Login";
 import "./styles.scss";
+import home from "./components/Home";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
         <button onClick={() => localStorage.removeItem('token')}>Sign Out</button>
       </Link>
       <div className="App">
-        <Route exact path="/" component={Login} />
+        <Route exact path='/' component={home} />
+        <Route exact path="/LogIn" component={Login} />
         <ProtectedRoute exact path='/bubbles' component={BubblePage} />
         {/* 
           Build a PrivateRoute component that will 
