@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios'
+import axiosWithAuth from "./AxiosWithAuth";
 
 const Login = (props) => {
   // make a post request to retrieve a token from the api
@@ -19,8 +20,8 @@ const Login = (props) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    axios
-      .post('http://localhost:5000/api/login', data)
+    axiosWithAuth()
+      .post('/login', data)
       .then((res) => {
         console.log(res)
         localStorage.setItem("token", res.data.payload);
