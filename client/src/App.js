@@ -1,14 +1,21 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import BubblePage from './components/BubblePage'
+import ProtectedRoute from "./components/ProtectedRoutes";
 import Login from "./components/Login";
 import "./styles.scss";
+import home from "./components/Home";
 
 function App() {
   return (
     <Router>
+      <Link to='/'>
+        <button onClick={() => localStorage.removeItem('token')}>Sign Out</button>
+      </Link>
       <div className="App">
-        <Route exact path="/" component={Login} />
+        <Route exact path='/' component={home} />
+        <Route exact path="/LogIn" component={Login} />
+        <ProtectedRoute exact path='/bubbles' component={BubblePage} />
         {/* 
           Build a PrivateRoute component that will 
           display BubblePage when you're authenticated 
