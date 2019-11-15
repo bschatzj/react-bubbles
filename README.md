@@ -17,7 +17,7 @@ You have three hours to complete this challenge. Plan your time accordingly.
 Commit your code regularly and meaningfully. This helps both you (in case you ever need to return to old code for any number of reasons and your project manager).
 
 ## Description
-
+  
 In this project you will create a login page and request a token from the server that you'll use to send all other requests to the server. You will then be able to fetch the color data array, update data, and delete data, and watch the fun happen!
 
 **Note** You can use the sites like the following to get color hex codes:
@@ -29,9 +29,17 @@ In this project you will create a login page and request a token from the server
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain what a token is used for.
+A token is used as an authentication to prove that one is logged in. It is stored in local storage so it proves that youre still logged in even if the page is refreshed or left.
+
 - [ ] What steps can you take in your web apps to keep your data secure?
+Use tokens to require one to log in and use protected routes to not allow one to get to a page unless they have the specific token that's needed.
+
 - [ ] Describe how web servers work.
+Web servers are things that provide the data that forms web pages. They are what gets accessed when one trys to get to a web page. 
+
+
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+Create is associated with put, and post. Read is associated with get. Update is associated with Put. Delete is associated with delete.
 
 
 ## Project Set Up
